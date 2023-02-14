@@ -51,7 +51,7 @@ ens <-function(my_lattice,n_x,n_y,n_agents,ii,jj,k,n_inner)
             cible_j = 0;
 
             #Choisir une cellule cible parmis les quatres cellules voisine en config Von Nuemann
-            pos_to_move_to = sample(1:4,size=1,Replace=TRUE,prob=1/4)  # Choix de l'une des 4 diretion avec probabilité uniforme
+            pos_to_move_to = sample(1:4,size=1,Replace=TRUE)  # Choix de l'une des 4 diretion avec probabilité uniforme
             #1:droite; 2:gauche; 3:haut; 4:bas
 
             ## calculer la position de la cellule ciblée pour son mouvement

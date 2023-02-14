@@ -21,7 +21,7 @@ n_tot = n_x * n_y
 ################################## Paramètres ################################################
 
 ## Parameters of automata
-k = sample(1:8,size=1,prob)   # capacité proliferative utilisé dans l'article peut varier entre 1 et 8 dans l'article fixé à 3
+k = sample(1:8,size=1,prob=1/8)   # capacité proliferative utilisé dans l'article peut varier entre 1 et 8 dans l'article fixé à 3
 
 
 
@@ -57,7 +57,7 @@ while(n_agents < 4*init_x*init_y)
 
     my_lattice[i,j] = 1
     ii[n_agents] = i
-    jj[n_agents] = jj
+    jj[n_agents] = j
 }
 
 
@@ -66,7 +66,7 @@ population[1] = n_agents
 
 # Nombre d'agents sur chaque ligne de la grille à l'instant init
 
-profils[,1] = rowSums(my_lattice)
+profils[:,1] = rowSums(my_lattice)
 
 # Visualisation de la configuration initiale de la grille
 plot(ii,jj,xlim = c(1,n_x), ylim = c(1, n_y), col = "red4", bg ="red",
