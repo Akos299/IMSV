@@ -112,9 +112,9 @@ ens <-function(my_lattice,n_x,n_y,n_agents,ii,jj,k,n_inner)
                 #Vérifier si bien que le mouvement est autoriser la cellule cible est occupé ou non
                 if(my_lattice[cible_i,cible_j] == 0)
                 {
-                    i_nb = i_cible
-                    j_nb = j_cible
-                    my_lattice[i_nb,j_cible] = 1; my_lattice[i_loc,j_loc]=0;
+                    i_nb = cible_i
+                    j_nb = cible_j
+                    my_lattice[i_nb,cible_j] = 1; my_lattice[i_loc,j_loc]=0;
                     ii[id_agent] = i_nb; jj[id_agent]=j_nb;
                 }
             }
