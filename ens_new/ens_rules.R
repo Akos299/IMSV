@@ -1,6 +1,6 @@
 
 ##################################################
-# Les differents Etats d'une agents ---> {1 : agent vivant , 0 : agent mort}
+# Les differents Etats d'un agents ---> {1 : agent vivant , 0 : agent mort}
 # ------------------@@@@@@@@@@@@@@---------------
 # Deux architectures pour les déplacements :
 #       1 . Von Neumann : 4 directions
@@ -28,7 +28,7 @@
 #       2. mouvoir    
 #       3. rester immobile
 #--------------------@@@@@@@@@@@@------------------
-#Les cellules filles se déplace en direction opposées 
+#Les cellules filles se déplacent en directions opposées 
 #
 #
 #
@@ -51,7 +51,7 @@ ens <-function(my_lattice,n_x,n_y,n_agents,ii,jj,cel_colors,k,n_inner)
             j_loc    = jj[id_agent]     # l'ordonnée actuelle de l'agent(ou cellule souche)
             childs_col = cel_colors[id_agent]  #la couleurs de l'agent initiant la mitose sera celle de ses filles
             ## Pour initier une mitose il faut que M >= k
-            ## Récupérer les cordonnées des huits cellules voisines de la cellules cible en config Moore
+            ## Récupérer les cordonnées des huits cellules voisines de la cellule cible en config Moore
             #Nord 
             N_j = ((j_loc) %% n_y) + 1
             N_i = i_loc
@@ -202,7 +202,7 @@ ens <-function(my_lattice,n_x,n_y,n_agents,ii,jj,cel_colors,k,n_inner)
             cible_j = ((j_loc - 2) %% n_y) +1
           }
           
-          ## Récupérer les cordonnées des huits cellules voisines de la cellules cible en config Moore
+          ## Récupérer les cordonnées des huits cellules voisines de la cellule cible en config Moore
           #Nord 
           N_j = ((cible_j) %% n_y) + 1
           N_i = cible_i
@@ -231,10 +231,10 @@ ens <-function(my_lattice,n_x,n_y,n_agents,ii,jj,cel_colors,k,n_inner)
           ## Calculer M pour la cellule ciblé
           M_m = my_lattice[N_i,N_j] + my_lattice[S_i,S_j] + my_lattice[E_i,E_j] + my_lattice[O_i,O_j] + my_lattice[NE_i,NE_j] + my_lattice[NO_i,NO_j] + my_lattice[SE_i,SE_j] + my_lattice[SO_i,SO_j]
           
-          ## faire le test pour voir si mouvements le mouvement est autorisé sinon annulé
+          ## faire le test pour voir si  le mouvement est autorisé sinon annulé
           if(M_m <= k)
           {
-            #Vérifier si bien que le mouvement est autoriser la cellule cible est occupé ou non
+            #Vérifier si bien que le mouvement est autorisé la cellule cible est occupée ou non
             if(my_lattice[cible_i,cible_j] == 0)
             {
               i_nb = cible_i
