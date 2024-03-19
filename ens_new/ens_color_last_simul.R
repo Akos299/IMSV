@@ -52,7 +52,7 @@ cel_freq_tabs = matrix(data = "", n_tot,n_outer+1) # matrice des coleurs toutes 
 
 ############################### Modele ########################################################
 
-##Initialisation uniforme des agents actives et atribution des couleurs aux cellules souches
+##Initialisation uniforme des agents actives et attribution des couleurs aux cellules souches
 
 n_agents = 0
 
